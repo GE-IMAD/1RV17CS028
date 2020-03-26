@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminAddProduct">
+
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="715dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        android:background="@color/brightred"
+        tools:layout_editor_absoluteY="8dp">
+
+        <ImageView
+            android:id="@+id/productimage"
+            android:layout_width="match_parent"
+            android:layout_height="198dp"
+            android:background="@color/colorPrimary"
+            android:autofillHints="Click To Upload Image"
+
+            app:srcCompat="@drawable/ic_menu_camera" />
+
+        <EditText
+            android:id="@+id/admin_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:text="Name" />
+
+        <EditText
+            android:id="@+id/admin_product_Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:text="Description" />
+
+        <EditText
+            android:id="@+id/admin_product_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:inputType="textPersonName"
+            android:text="price" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:text="quantity"
+            android:id="@+id/admin_product_quantity"/>
+
+        <Button
+            android:id="@+id/admin_post_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="170dp"
+            android:text="post"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimary"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

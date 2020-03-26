@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConfirmFinalActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/brightred">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt"
+            android:textColor="@color/white"
+            android:text="Please Confirm shipment Details"
+            android:textSize="18dp"
+            android:layout_margin="15dp"
+            android:textStyle="bold"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt"
+            android:layout_marginTop="60dp"
+            android:layout_margin="20dp"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:hint="Your Name"
+            android:id="@+id/shipment_name"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shipment_name"
+            android:layout_marginTop="60dp"
+            android:textColor="@color/white"
+            android:layout_margin="20dp"
+            android:textColorHint="@color/white"
+            android:inputType="number"
+            android:hint="Your Phone Number"
+            android:id="@+id/shipment_phone_no"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shipment_phone_no"
+            android:layout_marginTop="60dp"
+            android:layout_margin="20dp"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:hint="Your Home Address"
+            android:id="@+id/shipment_address"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shipment_address"
+            android:layout_marginTop="60dp"
+            android:layout_margin="20dp"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:hint="City"
+            android:id="@+id/shipment_city"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            android:text="Confirm"
+            android:background="@color/colorPrimary"
+            android:id="@+id/shipment_confirm"
+            />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
