@@ -4,12 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.mymall.Model.Products;
-import com.example.mymall.Prevalant.Prevalant;
+import com.example.mymall.Model.Rating;
 import com.example.mymall.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,6 +49,8 @@ public class MainActivity extends AppCompatActivity
         private RecyclerView  recyclerView;
         RecyclerView.LayoutManager layoutManager;
         public String email;
+        private int num,den;
+        private DatabaseReference ratingref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ProductRef= FirebaseDatabase.getInstance().getReference().child("Products");
+        ratingref=FirebaseDatabase.getInstance().getReference().child("Rating");
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -121,8 +122,14 @@ public class MainActivity extends AppCompatActivity
             @Override
             protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull final Products products) {
                 productViewHolder.productname.setText(products.getName());
-                productViewHolder.productdescription.setText(products.getDescription());
-                productViewHolder.productprice.setText("Price="+products.getPrice());
+                if(products.getRating()!= null)
+                productViewHolder.productdescription.setText("Rating :"+products.getRating());
+                else
+                    productViewHolder.productdescription.setText("Rating :  N.A");
+                productViewHolder.productprice.setText("Price :"+products.getPrice());
+                num=0;
+                den=0;
+
                 Picasso.get().load(products.getPimg()).into(productViewHolder.imageview);
                 productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override

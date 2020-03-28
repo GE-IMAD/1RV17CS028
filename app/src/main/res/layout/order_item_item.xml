@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="5dp"
+    android:layout_marginTop="9dp"
+    android:background="@color/white"
+
     >
     <TextView
         android:layout_width="match_parent"
@@ -10,15 +12,38 @@
         android:text=""
         android:textStyle="bold"
         android:textSize="20dp"
-        android:textColor="@color/white"
-        android:id="@+id/order_item_name"/>
+        android:textColor="@color/black"
+        android:id="@+id/order_item_name"
+        android:layout_marginLeft="10dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
         android:textStyle="bold"
         android:textSize="20dp"
-        android:textColor="@color/white"
-        android:id="@+id/order_item_quantity"/>
+        android:textColor="@color/black"
+        android:id="@+id/order_item_quantity"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:id="@+id/order_item_price"
+        android:layout_marginLeft="10dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:gravity="center"
+        android:id="@+id/rating_button"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        />
+
+
 
 </LinearLayout>

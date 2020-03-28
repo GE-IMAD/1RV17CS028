@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/my_listings_recycler"
-        android:background="@color/brightred"
+        android:background="@color/items"
         android:layout_below="@+id/my_listing_heading">
 
     </androidx.recyclerview.widget.RecyclerView>

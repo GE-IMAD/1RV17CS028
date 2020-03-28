@@ -1,7 +1,7 @@
 package com.example.mymall.Model;
 
 public class Products {
-    private String description,price,Name,date,pid,pimg,quantity,SoldBy;
+    private String description,price,Name,date,pid,pimg,quantity,SoldBy,review,rating;
     public Products()
     {}
 
@@ -13,7 +13,23 @@ public class Products {
         SoldBy = soldBy;
     }
 
-    public Products(String description, String price, String name, String date, String pid, String pimg, String quantity, String SoldBy) {
+    public String getReview() {
+        return review;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public Products(String description, String price, String name, String date, String pid, String pimg, String quantity, String SoldBy, String review, String rating) {
         this.description = description;
         this.price = price;
         Name = name;
@@ -22,6 +38,8 @@ public class Products {
         this.pimg = pimg;
         this.quantity=quantity;
         this.SoldBy=SoldBy;
+        this.review=review;
+        this.rating=rating;
     }
 
     public void setDescription(String description) {

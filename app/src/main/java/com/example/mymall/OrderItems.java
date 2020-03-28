@@ -26,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -43,6 +44,8 @@ public class OrderItems extends AppCompatActivity {
     private DatabaseReference ProductRef;
     private TextView nametxt;
     private TextView quantxt;
+    private String orderid;
+    private DatabaseReference rootRef;
 
     RecyclerView.LayoutManager layoutManager;
     HashMap<String,String> productidmap=new HashMap<>();
@@ -57,10 +60,12 @@ public class OrderItems extends AppCompatActivity {
         Bundle args = getIntent().getBundleExtra("BUNDLE");
         ArrayList<Object> listitems = (ArrayList<Object>) args.getSerializable("ARRAYLIST");
         email=extras.getString("email");
+        orderid=extras.getString("orderid");
         values = email.split("@");
         productidmap=(HashMap<String, String>)getIntent().getSerializableExtra("productmap");
         recyclerView = findViewById(R.id.recycler_order);
         recyclerView.setHasFixedSize(true);
+        rootRef = FirebaseDatabase.getInstance().getReference().child("Rating");
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         ProductRef= FirebaseDatabase.getInstance().getReference().child("Products");
@@ -94,8 +99,28 @@ public class OrderItems extends AppCompatActivity {
                 if(productidmap.containsKey(products.getPid())) {
                     productViewHolder.ordername.setText("Product Name : "+products.getName());
                     productViewHolder.quantity.setText("Product Quantity : "+productidmap.get(products.getPid()));
+                    productViewHolder.orderprice.setText("Price :"+products.getPrice());
+                    ProductViewHolder.rating.setText("Rate");
+                    ProductViewHolder.rating.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent=new Intent(OrderItems.this,RatingActivity.class);
 
+
+                            intent.putExtra("email",email);
+                            intent.putExtra("productmap",productidmap);
+                            intent.putExtra("productid",products.getPid());
+                            intent.putExtra("orderid",orderid);
+                            intent.putExtra("quantity",productidmap.get(products.getPid()));
+                            startActivity(intent);
+
+
+                        }
+                    });
                 }
+                else{
+                }
+
 
             }
 
@@ -113,6 +138,10 @@ public class OrderItems extends AppCompatActivity {
     }
 
 
+    public void ratingupdate(View view) {
+
+
     }
+}
 
 

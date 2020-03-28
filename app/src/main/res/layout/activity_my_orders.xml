@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             android:id="@+id/order_list"
             android:layout_below="@+id/myorderstext"
-            android:background="@color/brightred"
+            android:background="@color/items"
             >
         </androidx.recyclerview.widget.RecyclerView>
     </RelativeLayout>

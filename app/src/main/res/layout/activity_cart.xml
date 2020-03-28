@@ -8,22 +8,21 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/items"
     >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/rll">
+        android:id="@+id/rll"
+        >
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:text="My Cart"
+            android:textSize="30dp"
             android:background="@color/colorPrimary"
-            android:text="Total Price = 0"
-            android:textStyle="bold"
-            android:textSize="25dp"
-            android:textAlignment="center"
-            android:id="@+id/Total_Price_text"
-            android:height="50dp"
-            />
+            android:gravity="center"/>
+
 
     </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
@@ -32,18 +31,37 @@
         android:id="@+id/cart_list"
         android:layout_below="@+id/rll"
 
-        android:background="@color/brightred"
-        android:layout_above="@+id/next_process_button">
+        android:background="@color/items"
+        android:layout_above="@+id/cart_linear_layout">
 
     </androidx.recyclerview.widget.RecyclerView>
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:text="Next"
-        android:id="@+id/next_process_button"
-        android:textSize="20dp"
-        />
+        android:orientation="horizontal"
+        android:id="@+id/cart_linear_layout"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:text="Total Price = 0"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:id="@+id/Total_Price_text"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:background="@color/colorPrimary"
+            android:text="Next"
+            android:id="@+id/next_process_button"
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
 </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

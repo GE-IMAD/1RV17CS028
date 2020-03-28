@@ -62,7 +62,7 @@ public class SigninFragment extends Fragment {
         parentframelayout=getActivity().findViewById(R.id.registerframelayout);
         email=view.findViewById(R.id.sign_in_email);
         password=view.findViewById(R.id.sign_in_password);
-        closebtn=view.findViewById(R.id.sign_in_close_btn);
+     //   closebtn=view.findViewById(R.id.sign_in_close_btn);
         signinBtn=view.findViewById(R.id.sign_in_btn);
         firebaseauth=FirebaseAuth.getInstance();
         forgotpassword=view.findViewById(R.id.sign_in_forgot_password);
@@ -174,7 +174,7 @@ public class SigninFragment extends Fragment {
                                         Users userdata = dataSnapshot.child(values[0]).getValue(Users.class);
                                     }
                                     else{
-                                        Toast.makeText(getActivity(),"Account not found",Toast.LENGTH_LONG).show();
+                                        //Toast.makeText(getActivity(),"Account not found",Toast.LENGTH_LONG).show();
                                     }
                                 }
 

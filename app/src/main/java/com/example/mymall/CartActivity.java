@@ -79,10 +79,12 @@ public class CartActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull CartViewHolder cartViewHolder, int i, @NonNull final Cart cart) {
                 productidmap.put(cart.getPid(),cart.getQuantity());
+                totalamount.setText("Total Price ="+String.valueOf(FinalPrice));
                 cartViewHolder.txtProductName.setText("Product Name:  " + cart.getPname());
                 cartViewHolder.txtProductquantity.setText("Product Quantity:  "+cart.getQuantity());
                 int oneTypeProductPrice=((Integer.valueOf(cart.getPrice())))*Integer.valueOf(cart.getQuantity());
                 FinalPrice=FinalPrice+oneTypeProductPrice;
+                totalamount.setText("Total Price ="+String.valueOf(FinalPrice));
                 cartViewHolder.txtProductprice.setText("Product Price:  "+cart.getPrice());
                 cartViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override

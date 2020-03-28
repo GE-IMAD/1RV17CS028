@@ -55,7 +55,7 @@ public class MyOrdersActivity extends AppCompatActivity {
         FirebaseRecyclerOptions<Order> options= new FirebaseRecyclerOptions.Builder<Order>().setQuery(orderlistRef,Order.class).build();
         FirebaseRecyclerAdapter<Order, OrderViewHolder>adapter=new FirebaseRecyclerAdapter<Order, OrderViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull OrderViewHolder orderViewHolder, int i, @NonNull final Order order) {
+            protected void onBindViewHolder(@NonNull final OrderViewHolder orderViewHolder, int i, @NonNull final Order order) {
             //    Toast.makeText(MyOrdersActivity.this,order.getProductMap(),Toast.LENGTH_LONG);
                 orderViewHolder.orderidtext.setText("Order ID : " + order.getOrder_id());
                 orderViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -73,12 +73,14 @@ public class MyOrdersActivity extends AppCompatActivity {
                            // Toast.makeText(OrderItems.this,itemarray[i],Toast.LENGTH_LONG).show();
                             i++;
                         }
+
                         Intent intent=new Intent(MyOrdersActivity.this,OrderItems.class);
                         Bundle args = new Bundle();
                         args.putSerializable("ARRAYLIST",(Serializable)list);
                         intent.putExtra("BUNDLE",args);
                         intent.putExtra("email",email);
                         intent.putExtra("productmap",order.getProductMap());
+                        intent.putExtra("orderid",order.getOrder_id());
                         startActivity(intent);
 
                     }

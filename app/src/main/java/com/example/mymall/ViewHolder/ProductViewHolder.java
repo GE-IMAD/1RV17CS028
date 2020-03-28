@@ -3,6 +3,8 @@ package com.example.mymall.ViewHolder;
 import android.view.View;
 
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,10 +15,13 @@ import com.example.mymall.R;
 //import androidx.recyclerview.widget.RecyclerView;
 
 public class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
     public TextView productname,productdescription,productprice;
     public ImageView imageview;
     public itemclicklistener listener;
-    public  TextView ordername,quantity;
+    public  TextView ordername,quantity,orderprice;
+    public static Button  rating;
+
    public ProductViewHolder(View itemView){
        super(itemView);
        imageview=(ImageView) itemView.findViewById(R.id.product_image_main);
@@ -25,6 +30,10 @@ public class ProductViewHolder extends RecyclerView.ViewHolder implements View.O
        productprice=(TextView)itemView.findViewById(R.id.product_price);
        ordername=(TextView)itemView.findViewById(R.id.order_item_name);
        quantity=(TextView)itemView.findViewById(R.id.order_item_quantity);
+       orderprice=(TextView)itemView.findViewById(R.id.order_item_price);
+       rating=(Button)itemView.findViewById(R.id.rating_button);
+
+
    }
    public void setItemClickListener(itemclicklistener listener){
        this.listener=listener;

@@ -11,7 +11,7 @@
         android:layout_height="715dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
-        android:background="@color/brightred"
+        android:background="@color/items"
         tools:layout_editor_absoluteY="8dp">
 
         <ImageView
@@ -22,16 +22,22 @@
             android:autofillHints="Click To Upload Image"
 
             app:srcCompat="@drawable/ic_menu_camera" />
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/roundedcorner"
+            android:layout_marginTop="7dp">
         <EditText
             android:id="@+id/admin_product_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"
-            android:text="Name" />
+            android:hint="Name"
+            android:textColorHint="@color/black"/>
 
         <EditText
             android:id="@+id/admin_product_Description"
@@ -40,8 +46,9 @@
             android:ems="10"
             android:layout_marginTop="20dp"
             android:inputType="textPersonName"
-            android:textColor="@color/white"
-            android:text="Description" />
+            android:textColor="@color/black"
+            android:hint="Description"
+            android:textColorHint="@color/black"/>
 
         <EditText
             android:id="@+id/admin_product_price"
@@ -49,24 +56,28 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:layout_marginTop="20dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:inputType="textPersonName"
-            android:text="price" />
+            android:hint="price"
+            android:textColorHint="@color/black"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textColor="@color/white"
-            android:text="quantity"
-            android:id="@+id/admin_product_quantity"/>
+            android:textColor="@color/black"
+            android:hint="quantity"
+            android:id="@+id/admin_product_quantity"
+            android:textColorHint="@color/black"/>
+        </LinearLayout>
 
         <Button
             android:id="@+id/admin_post_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="170dp"
+            android:layout_marginTop="90dp"
             android:text="post"
             android:textColor="@color/white"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorPrimary"
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

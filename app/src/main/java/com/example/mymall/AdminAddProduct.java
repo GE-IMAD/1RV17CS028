@@ -148,6 +148,11 @@ public class AdminAddProduct extends AppCompatActivity {
                 });
             }
         });
+        Intent intent=new Intent(AdminAddProduct.this,MainActivity.class);
+        //  intent.putExtra("pid",products.getPid());
+        intent.putExtra("email",email);
+        startActivity(intent);
+
     }
     private void saveproductinfotodatabase(){
         HashMap<String,Object> productmap=new HashMap<>();

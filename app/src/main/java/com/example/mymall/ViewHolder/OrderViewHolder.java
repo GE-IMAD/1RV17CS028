@@ -1,6 +1,7 @@
 package com.example.mymall.ViewHolder;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,9 +13,11 @@ import com.example.mymall.itemclicklistener;
 public class OrderViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView orderidtext;
     private itemclicklistener itemClickListener;
+
     public OrderViewHolder(@NonNull View itemView) {
         super(itemView);
         orderidtext=itemView.findViewById(R.id.order_id);
+
     }
 
     @Override
